@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=2]
+
+[ext_resource path="res://BonesAsset/BoneMaterials/RMAo Shader.tres" type="Shader" id=1]
+[ext_resource path="res://BonesAsset/Textures/bonesBloody/bonesBloody_Albedo.png" type="Texture" id=2]
+[ext_resource path="res://BonesAsset/Textures/bonesBloody/bonesBloody_Normal.png" type="Texture" id=3]
+[ext_resource path="res://BonesAsset/Textures/bonesBloody/bonesBloody_RMAo.png" type="Texture" id=4]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/Tiling = null
+shader_param/Color = ExtResource( 2 )
+shader_param/RMAo = ExtResource( 4 )
+shader_param/Normal = ExtResource( 3 )

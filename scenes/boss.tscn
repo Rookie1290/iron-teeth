@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://dh767768h2n76"]
+
+[ext_resource type="Script" uid="uid://cm4w6kaevfsv3" path="res://scripts/boss.gd" id="1_neq0i"]
+[ext_resource type="PackedScene" uid="uid://csbqkipkd1hm7" path="res://zombie 3d assets/cac-1769805598908.gltf" id="2_neq0i"]
+[ext_resource type="AudioStream" uid="uid://duivd5r7w3xyr" path="res://eighty-percent/scary-scream-401725.mp3" id="3_qnbj4"]
+[ext_resource type="AudioStream" uid="uid://t3wcijipi4e0" path="res://eighty-percent/grunt-85990.mp3" id="4_r3bxh"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dlmty"]
+radius = 0.3
+height = 1.625
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_neq0i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qnbj4"]
+
+[sub_resource type="Animation" id="Animation_neq0i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hit area/CollisionShape3D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_jncid"]
+resource_name = "attack"
+length = 2.63
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hit area/CollisionShape3D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 1.0333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qnbj4"]
+_data = {
+&"RESET": SubResource("Animation_neq0i"),
+&"attack": SubResource("Animation_jncid")
+}
+
+[node name="boss" type="CharacterBody3D" unique_id=1087075328 groups=["boss"]]
+script = ExtResource("1_neq0i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1223772679]
+transform = Transform3D(2.025, 0, 0, 0, 2.025, 0, 0, 0, 2.025, 0, 1.5948119, 0)
+shape = SubResource("CapsuleShape3D_dlmty")
+disabled = true
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=678844105]
+
+[node name="attackrange" type="Area3D" parent="." unique_id=484667924]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="attackrange" unique_id=405397635]
+transform = Transform3D(5.535, 0, 0, 0, 4.35, 0, 0, 0, 5.535, 0, 1.4914646, 0)
+shape = SubResource("SphereShape3D_neq0i")
+disabled = true
+debug_color = Color(0.7176471, 0.48235294, 0, 0.95686275)
+
+[node name="hit area" type="Area3D" parent="." unique_id=2072805740]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hit area" unique_id=1142286510]
+transform = Transform3D(1.075, 0, 0, 0, 2.81, 0, 0, 0, 1.974, 0, 2.0051715, -2.1152968)
+shape = SubResource("BoxShape3D_qnbj4")
+disabled = true
+debug_color = Color(0, 0.63529414, 0.42352942, 0.9882353)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1610610639]
+libraries/ = SubResource("AnimationLibrary_qnbj4")
+
+[node name="AuxScene" parent="." unique_id=24909812 instance=ExtResource("2_neq0i")]
+transform = Transform3D(-0.014997438, 0, -0.0002772303, 0, 0.015, 0, 0.0002772303, 0, -0.014997438, 0, 1.6135526, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=919192517]
+stream = ExtResource("3_qnbj4")
+pitch_scale = 0.86
+
+[node name="attack sound" type="AudioStreamPlayer3D" parent="." unique_id=1780314365]
+stream = ExtResource("4_r3bxh")
+pitch_scale = 0.94
+
+[connection signal="body_entered" from="attackrange" to="." method="_on_attackrange_body_entered"]
+[connection signal="body_exited" from="attackrange" to="." method="_on_attackrange_body_exited"]
+[connection signal="body_entered" from="hit area" to="." method="_on_hit_area_body_entered"]

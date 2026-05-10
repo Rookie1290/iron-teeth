@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://c8sxni15v2wc2"]
+
+[ext_resource type="Script" uid="uid://dratbjosgqw7i" path="res://scripts/door.gd" id="1_uvdjg"]
+[ext_resource type="PackedScene" uid="uid://dx0nm80yjhuw2" path="res://zombie 3d assets/door.glb" id="2_uvdjg"]
+[ext_resource type="AudioStream" uid="uid://haoeusc8uqfd" path="res://eighty-percent/creaky-old-door-472357.mp3" id="3_83dcw"]
+
+[sub_resource type="Animation" id="Animation_18pbm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.0370578, -0.9232263)]
+}
+
+[sub_resource type="Animation" id="Animation_q5w8r"]
+resource_name = "close"
+length = 0.7395
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7395),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5771319, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7395),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.89868164, 1.0370578, -0.022508621), Vector3(0.019499242, 1.0370578, -0.93448365)]
+}
+
+[sub_resource type="Animation" id="Animation_83dcw"]
+resource_name = "close2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5669916, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.9398049, 1.0370578, -0.022508621), Vector3(0, 1.0370578, -0.9232263)]
+}
+
+[sub_resource type="Animation" id="Animation_la1wf"]
+resource_name = "open"
+length = 0.7175
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7175),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5771319, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7175),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.004627049, 1.0370578, -0.92055124), Vector3(-0.90615064, 1.0370578, -0.02065444)]
+}
+
+[sub_resource type="Animation" id="Animation_uvdjg"]
+resource_name = "open2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5669916, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.02108556, 1.0370578, -0.9502598), Vector3(0.9457623, 1.0370578, -0.02624762)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t58dd"]
+_data = {
+&"RESET": SubResource("Animation_18pbm"),
+&"close": SubResource("Animation_q5w8r"),
+&"close2": SubResource("Animation_83dcw"),
+&"open": SubResource("Animation_la1wf"),
+&"open2": SubResource("Animation_uvdjg")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_uvdjg"]
+
+[node name="door" type="CharacterBody3D" unique_id=782542964 groups=["interact"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_uvdjg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1417020175]
+libraries/ = SubResource("AnimationLibrary_t58dd")
+
+[node name="door" parent="." unique_id=549472668 instance=ExtResource("2_uvdjg")]
+transform = Transform3D(0.9999999, 0, 0, 0, 1.1899021, 0, 0, 0, 1.0826875, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=695019241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0370578, -0.9232263)
+shape = SubResource("SphereShape3D_uvdjg")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1869614553]
+stream = ExtResource("3_83dcw")
+volume_db = -11.707

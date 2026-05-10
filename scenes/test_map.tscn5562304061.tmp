@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://cgotwmnomdilk"]
+
+[ext_resource type="Texture2D" uid="uid://qon0g6cq5hst" path="res://icon.svg" id="1_fn2sa"]
+[ext_resource type="PackedScene" uid="uid://ch24t0yop5qio" path="res://scenes/player.tscn" id="2_57l66"]
+[ext_resource type="PackedScene" uid="uid://ckgfduhwwcsr2" path="res://scenes/npc.tscn" id="3_57l66"]
+[ext_resource type="PackedScene" uid="uid://cqshq3lpa4064" path="res://scenes/zombie.tscn" id="4_p21b5"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_p21b5"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bdpbv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ss0f2"]
+albedo_texture = ExtResource("1_fn2sa")
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_p21b5"]
+
+[node name="test map" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_p21b5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(12.7343, 0, 0, 0, 1, 0, 0, 0, 10.904176, 0, 0, 0)
+mesh = SubResource("PlaneMesh_bdpbv")
+surface_material_override/0 = SubResource("StandardMaterial3D_ss0f2")
+
+[node name="player" parent="." instance=ExtResource("2_57l66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1062222, 0, 3.1167612)
+
+[node name="npc" parent="." instance=ExtResource("3_57l66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.599686, 0)
+light_color = Color(1, 0.89465016, 0.7035663, 1)
+light_energy = 1.99
+omni_range = 33.47956
+
+[node name="zombie" parent="." instance=ExtResource("4_p21b5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.785255, 2.3841858e-07, 6.183614)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_p21b5")

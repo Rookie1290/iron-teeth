@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=2]
+
+[ext_resource type="Shader" path="res://zombie 3d assets/FilesForGodot/BonesAsset/BoneMaterials/RMAo Shader.tres" id="1"]
+[ext_resource type="Texture" uid="uid://bgujg4efvfe4c" path="res://zombie 3d assets/FilesForGodot/BonesAsset/Textures/bones/bones_Albedo.png" id="2"]
+[ext_resource type="Texture" uid="uid://p3jaqjfpw0o0" path="res://zombie 3d assets/FilesForGodot/BonesAsset/Textures/bones/bones_RMAo.png" id="3"]
+[ext_resource type="Texture" uid="uid://b6xlp3grv0qcf" path="res://zombie 3d assets/FilesForGodot/BonesAsset/Textures/bones/bones_Normal.png" id="4"]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/Tiling = null
+shader_param/Color = ExtResource( 2 )
+shader_param/RMAo = ExtResource( 3 )
+shader_param/Normal = ExtResource( 4 )

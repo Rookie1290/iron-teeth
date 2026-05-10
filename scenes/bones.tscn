@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bbgiw21vms08y"]
+
+[ext_resource type="PackedScene" path="res://zombie 3d assets/FilesForGodot/BonesAsset/AssetScenes/Skull_2.tscn" id="1_2kbmy"]
+[ext_resource type="PackedScene" path="res://zombie 3d assets/FilesForGodot/BonesAsset/AssetScenes/Bone_3.tscn" id="2_tdlfd"]
+[ext_resource type="PackedScene" path="res://zombie 3d assets/FilesForGodot/BonesAsset/AssetScenes/Bone_1.tscn" id="3_o8oas"]
+[ext_resource type="PackedScene" path="res://zombie 3d assets/FilesForGodot/BonesAsset/AssetScenes/Bone_2.tscn" id="4_wodrv"]
+[ext_resource type="PackedScene" path="res://zombie 3d assets/FilesForGodot/BonesAsset/AssetScenes/HipBone_2.tscn" id="5_fsoga"]
+[ext_resource type="PackedScene" path="res://zombie 3d assets/FilesForGodot/BonesAsset/AssetScenes/Jaw.tscn" id="6_ibxm6"]
+[ext_resource type="PackedScene" path="res://zombie 3d assets/FilesForGodot/BonesAsset/AssetScenes/Ribs.tscn" id="7_gxpp2"]
+[ext_resource type="PackedScene" path="res://zombie 3d assets/FilesForGodot/BonesAsset/AssetScenes/Spine.tscn" id="8_cpkmq"]
+[ext_resource type="PackedScene" uid="uid://23s8jecdws7w" path="res://zombie 3d assets/blood.glb" id="9_tdlfd"]
+
+[node name="bones" type="Node3D" unique_id=1348519321]
+
+[node name="Skull_2" parent="." unique_id=828097803 instance=ExtResource("1_2kbmy")]
+transform = Transform3D(0.8912916, 0, -0.4534306, -0.2591038, 0.8206509, -0.50931066, 0.37210822, 0.5714299, 0.73143923, 0.20880449, 0.10491449, -0.3996098)
+
+[node name="Bone_3" parent="." unique_id=2107691304 instance=ExtResource("2_tdlfd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43150055, -1.1920929e-07, -0.24963307)
+
+[node name="Bone_1" parent="." unique_id=1907431827 instance=ExtResource("3_o8oas")]
+transform = Transform3D(0.6087476, 0, 0.793364, 0, 1, 0, -0.793364, 0, 0.6087476, 0.08806062, 0, 0.06831312)
+
+[node name="Bone_2" parent="." unique_id=695531765 instance=ExtResource("4_wodrv")]
+transform = Transform3D(-0.36476305, 0, 0.93110037, 0, 1, 0, -0.93110037, 0, -0.36476305, -0.08035731, 0, 0.3206365)
+
+[node name="HipBone_2" parent="." unique_id=1562151572 instance=ExtResource("5_fsoga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20223093, 0.25324166, -0.40803158)
+
+[node name="Jaw" parent="." unique_id=1298692349 instance=ExtResource("6_ibxm6")]
+transform = Transform3D(0.25485516, 0, 0.96697927, 0, 1, 0, -0.96697927, 0, 0.25485516, -0.262608, 0, -0.06252372)
+
+[node name="Ribs" parent="." unique_id=1286109587 instance=ExtResource("7_gxpp2")]
+transform = Transform3D(0.255277, 0, -0.966868, 0, 1, 0, 0.966868, 0, 0.255277, 0.3814232, 0.21344656, -0.09517813)
+
+[node name="Spine" parent="." unique_id=1770955904 instance=ExtResource("8_cpkmq")]
+transform = Transform3D(0.7024636, 0, 0.71171963, 0, 1, 0, -0.71171963, 0, 0.7024636, 0.17798722, 0, 0.10318059)
+
+[node name="blood2" parent="." unique_id=308953073 instance=ExtResource("9_tdlfd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26890457, 0, 0.21159863)
+
+[node name="blood3" parent="." unique_id=1587665429 instance=ExtResource("9_tdlfd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17132556, 0, -0.2789889)
+
+[node name="blood4" parent="." unique_id=1990867858 instance=ExtResource("9_tdlfd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24633408, -1.1920929e-07, -0.36119604)

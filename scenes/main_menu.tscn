@@ -1,0 +1,188 @@
+[gd_scene format=3 uid="uid://gjoiht7ptqmx"]
+
+[ext_resource type="Script" uid="uid://bjvdv3kd6avwr" path="res://scripts/main_menu.gd" id="1_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://cndcclaous4je" path="res://zombie 2d assets/green bg.png" id="1_l6cm7"]
+[ext_resource type="FontFile" uid="uid://rfbg043ihd8x" path="res://prussian-brew-solid/PRBRS___.ttf" id="3_wu84c"]
+[ext_resource type="AudioStream" uid="uid://ccdt60mukupym" path="res://eighty-percent/thud.mp3" id="4_wu84c"]
+
+[node name="main menu" type="Control" unique_id=1137305308]
+process_mode = 3
+z_index = 3
+y_sort_enabled = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_bqqt6")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1752914353]
+stream = ExtResource("4_wu84c")
+
+[node name="settings" type="Control" parent="." unique_id=2026158921]
+visible = false
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 647.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="settings" unique_id=1347890568]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -330.5
+offset_top = -21.5
+offset_right = 368.5
+offset_bottom = 192.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="sensitivity_label" type="Label" parent="settings/VBoxContainer" unique_id=114629635]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 20
+text = "SENSITIVITY"
+
+[node name="sensitivity" type="HSlider" parent="settings/VBoxContainer" unique_id=1587762916]
+layout_mode = 2
+min_value = 0.01
+max_value = 0.5
+step = 0.01
+value = 0.25
+
+[node name="apply button" type="TextureButton" parent="settings" unique_id=97484374]
+layout_mode = 0
+offset_left = 966.99994
+offset_top = 307.0
+offset_right = 1060.481
+offset_bottom = 356.8604
+scale = Vector2(1.4334478, 1.1231356)
+
+[node name="apply" type="Label" parent="settings/apply button" unique_id=570962842]
+y_sort_enabled = true
+layout_mode = 0
+offset_left = 12.905945
+offset_top = 5.3421936
+offset_right = 78.905945
+offset_bottom = 42.342194
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 35
+text = "Apply"
+
+[node name="apply rect" type="NinePatchRect" parent="settings/apply button/apply" unique_id=156582673]
+layout_mode = 0
+offset_left = -18.5
+offset_top = -6.0
+offset_right = 81.0
+offset_bottom = 44.0
+texture = ExtResource("1_l6cm7")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="play button" type="TextureButton" parent="." unique_id=1697854165]
+process_mode = 3
+layout_mode = 0
+offset_left = 146.5
+offset_top = 543.0
+offset_right = 228.47018
+offset_bottom = 586.62787
+scale = Vector2(1.4334478, 1.1231356)
+
+[node name="play" type="Label" parent="play button" unique_id=227625823]
+y_sort_enabled = true
+layout_mode = 0
+offset_left = 12.905945
+offset_top = 5.3421936
+offset_right = 63.905945
+offset_bottom = 42.342194
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 35
+text = "Play"
+
+[node name="play rect" type="NinePatchRect" parent="play button/play" unique_id=1948218739]
+layout_mode = 0
+offset_left = -18.5
+offset_top = -6.0
+offset_right = 69.5
+offset_bottom = 43.0
+texture = ExtResource("1_l6cm7")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="settings button" type="TextureButton" parent="." unique_id=717440097]
+layout_mode = 0
+offset_left = 530.5
+offset_top = 543.0
+offset_right = 653.6297
+offset_bottom = 586.62787
+scale = Vector2(1.4334478, 1.1231356)
+
+[node name="settings2" type="Label" parent="settings button" unique_id=296620051]
+y_sort_enabled = true
+layout_mode = 0
+offset_left = 12.905945
+offset_top = 5.3421936
+offset_right = 110.905945
+offset_bottom = 42.342194
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 35
+text = "Settings"
+
+[node name="settings rect" type="NinePatchRect" parent="settings button/settings2" unique_id=978454529]
+layout_mode = 0
+offset_left = -18.5
+offset_top = -6.0
+offset_right = 109.0
+offset_bottom = 43.0
+texture = ExtResource("1_l6cm7")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="quit button" type="TextureButton" parent="." unique_id=605420077]
+layout_mode = 0
+offset_left = 961.5
+offset_top = 543.0
+offset_right = 1044.8655
+offset_bottom = 586.62787
+scale = Vector2(1.4334478, 1.1231356)
+
+[node name="quit" type="Label" parent="quit button" unique_id=2057908873]
+y_sort_enabled = true
+layout_mode = 0
+offset_left = 12.905945
+offset_top = 5.3421936
+offset_right = 57.905945
+offset_bottom = 42.342194
+theme_override_fonts/font = ExtResource("3_wu84c")
+theme_override_font_sizes/font_size = 35
+text = "Quit"
+
+[node name="quit rect" type="NinePatchRect" parent="quit button/quit" unique_id=81633573]
+layout_mode = 0
+offset_left = -18.5
+offset_top = -6.0
+offset_right = 69.5
+offset_bottom = 43.0
+texture = ExtResource("1_l6cm7")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[connection signal="value_changed" from="settings/VBoxContainer/sensitivity" to="." method="_on_sensitivity_value_changed"]
+[connection signal="pressed" from="settings/apply button" to="." method="_on_apply_button_pressed"]
+[connection signal="pressed" from="play button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="settings button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="quit button" to="." method="_on_quit_button_pressed"]

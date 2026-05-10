@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bmmfvjv8tclpk"]
+
+[ext_resource type="Script" uid="uid://d2seq6wj16qki" path="res://scripts/bing_bong.gd" id="1_mnsl8"]
+
+[node name="anim bot" type="Node3D" unique_id=1751289386]
+script = ExtResource("1_mnsl8")

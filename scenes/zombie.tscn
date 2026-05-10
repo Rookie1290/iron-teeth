@@ -1,0 +1,204 @@
+[gd_scene format=3 uid="uid://cqshq3lpa4064"]
+
+[ext_resource type="Script" uid="uid://ba4aqhjdc2kr6" path="res://scripts/zombie.gd" id="1_1vlb3"]
+[ext_resource type="PackedScene" uid="uid://b6drjkj13dkd8" path="res://zombie 3d assets/people/zombie rigged.glb" id="2_httt1"]
+[ext_resource type="AudioStream" uid="uid://xv0ucu6h8lkp" path="res://eighty-percent/woodpecker-352822.mp3" id="3_xepks"]
+[ext_resource type="AudioStream" uid="uid://dbtjxy6uv23hl" path="res://eighty-percent/woodpecker-sound-effect-384453.mp3" id="4_4gx57"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ftooa"]
+radius = 0.422209
+height = 2.7786105
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1vlb3"]
+radius = 1.60143
+
+[sub_resource type="Animation" id="Animation_httt1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hit_box/CollisionShape3D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("zombie rigged:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("zombie rigged:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("attack_box/CollisionShape3D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_1vlb3"]
+resource_name = "attack"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hit_box/CollisionShape3D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_4gx57"]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("zombie rigged:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("zombie rigged:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.49),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.5404102, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("attack_box/CollisionShape3D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.02, 0.06666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xepks"]
+_data = {
+&"RESET": SubResource("Animation_httt1"),
+&"attack": SubResource("Animation_1vlb3"),
+&"die": SubResource("Animation_4gx57")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4gx57"]
+radius = 1.1525
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xepks"]
+radius = 37.60697
+
+[node name="zombie" type="CharacterBody3D" unique_id=1443429416 groups=["zombie"]]
+script = ExtResource("1_1vlb3")
+
+[node name="body" type="CollisionShape3D" parent="." unique_id=1428485794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4106852, 0)
+shape = SubResource("CapsuleShape3D_ftooa")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1443174003]
+
+[node name="attack_box" type="Area3D" parent="." unique_id=1271783230]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="attack_box" unique_id=355743343]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.60088, 0)
+shape = SubResource("SphereShape3D_1vlb3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1319838478]
+process_mode = 3
+libraries/ = SubResource("AnimationLibrary_xepks")
+
+[node name="hit_box" type="Area3D" parent="." unique_id=1061567620]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hit_box" unique_id=1191435987]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54814, -0.651731)
+shape = SubResource("SphereShape3D_4gx57")
+disabled = true
+
+[node name="detection zone" type="Area3D" parent="." unique_id=513073743]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3598642, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="detection zone" unique_id=205620583]
+shape = SubResource("SphereShape3D_xepks")
+debug_color = Color(0.6, 0, 0.31764707, 1)
+
+[node name="detection ray" type="RayCast3D" parent="." unique_id=1643624792]
+transform = Transform3D(1, 0, 0, 0, 0.00022693077, -1, 0, 1, 0.00022693077, 0, 2.4221115, 0)
+target_position = Vector3(0, 39.345, 0)
+
+[node name="zombie rigged" parent="." unique_id=1500664044 instance=ExtResource("2_httt1")]
+transform = Transform3D(1.43, 0, 0, 0, 1.43, 0, 0, 0, 1.43, 0, 0, 0)
+
+[node name="Skeleton3D" parent="zombie rigged/Armature" parent_id_path=PackedInt32Array(1500664044, 782401199) index="0" unique_id=624818464]
+bones/1/rotation = Quaternion(0.014122365, -0.0054036854, 0.014483037, 0.99978083)
+bones/3/rotation = Quaternion(-0.030169457, -0.58859575, 0.80511045, 0.06664863)
+bones/4/rotation = Quaternion(-0.17969622, -0.009457858, -0.028115774, 0.9832748)
+bones/5/rotation = Quaternion(-0.042583566, -0.002741049, -0.0011244447, 0.9990886)
+bones/6/rotation = Quaternion(-0.0009794391, -0.0111974375, 0.99992037, 0.005743201)
+bones/7/rotation = Quaternion(0.0024053443, -0.0014028478, 2.8440763e-05, 0.9999961)
+bones/8/rotation = Quaternion(-0.04052105, 0.58491135, -0.80279714, 0.108413294)
+bones/9/rotation = Quaternion(-0.18376449, 0.015177742, 0.02183996, 0.98261046)
+bones/10/rotation = Quaternion(-0.044756852, 0.0033572242, -0.0008326961, 0.99899197)
+bones/11/rotation = Quaternion(0.0015080002, -0.013701478, 0.99982554, -0.01260535)
+bones/12/rotation = Quaternion(0.0024311263, 0.0014885829, -4.3205127e-05, 0.999996)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1408860211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.018634, 0)
+stream = ExtResource("3_xepks")
+volume_db = -5.854
+pitch_scale = 0.9
+
+[node name="bite" type="AudioStreamPlayer3D" parent="." unique_id=726902046]
+stream = ExtResource("4_4gx57")
+volume_db = -4.128
+pitch_scale = 0.97
+
+[connection signal="body_entered" from="attack_box" to="." method="_on_attack_box_body_entered"]
+[connection signal="body_exited" from="attack_box" to="." method="_on_attack_box_body_exited"]
+[connection signal="body_entered" from="hit_box" to="." method="_on_hit_box_body_entered"]
+[connection signal="body_entered" from="detection zone" to="." method="_on_detection_zone_body_entered"]
+[connection signal="body_exited" from="detection zone" to="." method="_on_detection_zone_body_exited"]
+
+[editable path="zombie rigged"]

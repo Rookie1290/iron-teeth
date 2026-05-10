@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cxa1dr0jvp8xr"]
+
+[ext_resource type="Script" uid="uid://dayqghfbou31s" path="res://scripts/sounds.gd" id="1_8b883"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_p1xkc"]
+radius = 23.948706
+
+[node name="sounds" type="Node3D" unique_id=789179090]
+script = ExtResource("1_8b883")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1762356899]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1586460701]
+shape = SubResource("SphereShape3D_p1xkc")
+debug_color = Color(0.6273673, 0.5306253, 0, 1)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1216518410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.240969, 0, 0)
+pitch_scale = 0.26
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
