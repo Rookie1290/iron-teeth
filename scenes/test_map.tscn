@@ -254,7 +254,7 @@ script = ExtResource("1_8q2vg")
 [node name="main menu" parent="." unique_id=1137305308 groups=["main"] instance=ExtResource("44_fveia")]
 
 [node name="zombie" parent="." unique_id=1443429416 instance=ExtResource("4_p21b5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.086334, 0.808604, 27.682709)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.89289, 0.808604, 27.682709)
 
 [node name="zombie2" parent="." unique_id=1336664704 instance=ExtResource("4_p21b5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.11327, 0.808604, -9.267994)
