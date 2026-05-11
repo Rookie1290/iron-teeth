@@ -114,7 +114,7 @@ func die() -> void:
 	animation_player.play("die")
 	await animation_player.animation_finished
 	queue_free()
-
+	
 
 func _on_detection_zone_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):

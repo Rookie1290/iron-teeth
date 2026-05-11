@@ -15,6 +15,7 @@ var health = 100
 @export var stamina_regen := 10.0     # per second
 @export var stam_regen_delay := 1        # delay after sprint stops
 @onready var stamina_bar: TextureProgressBar = $CanvasLayer/ui/stamina_bar
+const WAIFU_BOMB = preload("uid://c0nupokqbyans")
 
 var stamina := max_stamina
 var stam_regen_timer := 0.0
@@ -23,6 +24,7 @@ var stam_regen_timer := 0.0
 @export var regen_delay := 3.0       # seconds after last hit
 var regen_timer := 0.0
 @onready var damage_overlay: ColorRect = $"CanvasLayer/damage overlay"
+@onready var camera: Camera3D = $head/Camera3D
 
 @onready var interact_ray: RayCast3D = $"head/interact ray"
 @onready var dialogue: Label = $"CanvasLayer/ui/dialogue rect/dialogue"
@@ -61,11 +63,16 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("g"):
 		
 		walk_speed = 15
+	if Input.is_action_just_pressed("secondary_item"):
+		throw_waifu()
+		
+		
 	if Input.is_action_just_pressed("h"):
 		walk_speed = 4
 	# Handle jump.
 	if Input.is_action_just_pressed("jump"):
-		#velocity.y = JUMP_VELOCITY
+		velocity.y = JUMP_VELOCITY
+		#velocity.x = JUMP_VELOCITY
 		Global.update_progress()
 		#get_shotgun()
 		
@@ -152,12 +159,23 @@ func player_health(amount):
 	if health <= 0:
 		die()
 
+func throw_waifu():
+	var ins = WAIFU_BOMB.instantiate()
+	get_tree().current_scene.add_child(ins)
+	ins.global_transform.origin = camera.global_transform.origin
+	var dir = camera.global_transform.basis.z
+	ins.throw(dir)
+	
+	
+
+
 func die():
 	print("playerr dead")
 	queue_free()
 	var main = get_tree().get_first_node_in_group("main")
 	main.respawn()
 	#get_tree().quit()
+	
 func update_damage_overlay():
 	var t := 1.0 - float(health) / float(max_health)
 	t = clamp(t, 0.0, 1.0)

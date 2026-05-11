@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c0nupokqbyans"]
+
+[ext_resource type="Script" uid="uid://b7aedcgi2nm5l" path="res://scripts/waifu_bomb.gd" id="1_lwbkn"]
+[ext_resource type="Texture2D" uid="uid://ddgua3g0qrrpy" path="res://zombie 2d assets/waifu_figure-removebg-preview.png" id="1_oy2ff"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lwbkn"]
+
+[node name="waifu bomb" type="RigidBody3D" unique_id=178991697]
+script = ExtResource("1_lwbkn")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1920798551]
+transform = Transform3D(0.63, 0, 0, 0, 0.63, 0, 0, 0, 0.63, 0, 0, 0)
+billboard = 2
+texture = ExtResource("1_oy2ff")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1973537541]
+shape = SubResource("BoxShape3D_lwbkn")
+
+[node name="Timer" type="Timer" parent="." unique_id=88044767]
