@@ -88,6 +88,7 @@ func attack() -> void:
 
 func take_damage(amount: int) -> void:
 	health -= amount
+	Global.points += hit_points
 	if health <= 0:
 		die()
 
@@ -107,6 +108,7 @@ func _on_attack_box_body_exited(_body: Node3D) -> void:
 
 
 func die() -> void:
+	Global.points += die_points
 	dead = true
 	self.process_mode = Node.PROCESS_MODE_DISABLED
 	animation_player.play("die")

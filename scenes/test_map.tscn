@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://4wim7eanwcd1" path="res://zombie 3d assets/waifu shelf.glb" id="28_vo55k"]
 [ext_resource type="PackedScene" uid="uid://ca23vrixgelba" path="res://zombie 3d assets/funko shelf.glb" id="29_q4233"]
 [ext_resource type="PackedScene" uid="uid://bhjnef4j3kr4j" path="res://zombie 3d assets/waifu bed.glb" id="30_7qive"]
+[ext_resource type="PackedScene" uid="uid://pd0sl1dwr2co" path="res://scenes/rock_wall_door.tscn" id="30_yq8tt"]
 [ext_resource type="PackedScene" uid="uid://qb4unxh26j0v" path="res://zombie 3d assets/wood table.glb" id="31_dxr60"]
 [ext_resource type="PackedScene" uid="uid://n01fuebeyrx1" path="res://zombie 3d assets/old tv.glb" id="32_ooflh"]
 [ext_resource type="PackedScene" uid="uid://co05l1c6smuuj" path="res://zombie 3d assets/xbox.glb" id="33_2w63r"]
@@ -48,6 +49,7 @@
 [ext_resource type="PackedScene" uid="uid://dep5hwqmqlcse" path="res://zombie 3d assets/corps looking rigged.glb" id="45_6hptx"]
 [ext_resource type="PackedScene" uid="uid://j3xcklo8838s" path="res://zombie 3d assets/miku body pillow.glb" id="45_fveia"]
 [ext_resource type="PackedScene" uid="uid://cltg1mb5w47uy" path="res://zombie 3d assets/cat.glb" id="48_2icoj"]
+[ext_resource type="PackedScene" uid="uid://c1ahe004eu2ma" path="res://scenes/big_door_rock.tscn" id="50_e6t1a"]
 
 [sub_resource type="Environment" id="Environment_ss0f2"]
 background_mode = 1
@@ -378,10 +380,10 @@ volume_db = -18.181
 [node name="wooden bed" parent="." unique_id=2030060620 instance=ExtResource("18_pjm8e")]
 transform = Transform3D(0.62590533, 0, -0.071711294, 0, 0.63, 0, 0.071711294, 0, 0.62590533, -84.21815, -0.059436798, 71.69667)
 
-[node name="Cube_001" parent="wooden bed" index="2" unique_id=789247679]
+[node name="Cube_001" parent="wooden bed" index="2" unique_id=1090202475]
 transform = Transform3D(0.27602202, 0.059992522, 0.0060327686, -0.13079886, 0.12642372, 0.026801731, 0.0033731647, -0.006873471, 0.5456189, -2.384636, 1.9076221, -0.042160034)
 
-[node name="Cube_002" parent="wooden bed" index="3" unique_id=579398932]
+[node name="Cube_002" parent="wooden bed" index="3" unique_id=466843584]
 transform = Transform3D(0.30546337, 0, 0, 0, 0.14010459, 0, 0, 0, 0.54630995, -2.2726517, 1.6742297, 0.017852783)
 
 [node name="wooden bed3" parent="." unique_id=431965134 instance=ExtResource("18_pjm8e")]
@@ -1000,6 +1002,8 @@ transform = Transform3D(-0.0013613291, 0, 0.99999905, 0, 1, 0, -0.99999905, 0, -
 [node name="rock wall13" parent="rock wall" unique_id=212230181 instance=ExtResource("26_pmkf2")]
 transform = Transform3D(-0.9999359, 0, -0.01132691, 0, 1, 0, 0.01132691, 0, -0.9999359, 26.974827, 0, -22.434072)
 
+[node name="rock wall" parent="rock wall" unique_id=1129956850 instance=ExtResource("30_yq8tt")]
+
 [node name="rock wall14" parent="rock wall" unique_id=70488222 instance=ExtResource("26_pmkf2")]
 transform = Transform3D(-0.9999359, 0, -0.01132691, 0, 1, 0, 0.01132691, 0, -0.9999359, 27.367603, 0, 16.615025)
 
@@ -1146,6 +1150,10 @@ visible = false
 
 [node name="cat" parent="." unique_id=1996358063 instance=ExtResource("48_2icoj")]
 transform = Transform3D(0.16781741, 0, -0.17157306, 0, 0.24, 0, 0.17157306, 0, 0.16781741, -35.77629, 1.3533838, 38.121845)
+
+[node name="big_door_rock" parent="." unique_id=280265931 instance=ExtResource("50_e6t1a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.407524, 1.8955675, 59.66605)
+point_threshold = 50
 
 [connection signal="body_entered" from="progress area" to="." method="_on_progress_area_body_entered"]
 [connection signal="body_entered" from="progress area2" to="." method="_on_progress_area_2_body_entered"]
