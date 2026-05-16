@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://c0nupokqbyans"]
+
+[ext_resource type="Script" uid="uid://b7aedcgi2nm5l" path="res://scripts/waifu_bomb.gd" id="1_lwbkn"]
+[ext_resource type="Texture2D" uid="uid://ddgua3g0qrrpy" path="res://zombie 2d assets/waifu_figure-removebg-preview.png" id="1_oy2ff"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lwbkn"]
+
+[sub_resource type="Animation" id="Animation_lwbkn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blast_zone/blast_col:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_xje7u"]
+resource_name = "explosion"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("blast_zone/blast_col:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19999999, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qr86e"]
+_data = {
+&"RESET": SubResource("Animation_lwbkn"),
+&"explosion": SubResource("Animation_xje7u")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_lwbkn"]
+radius = 4.357694
+
+[node name="waifu bomb" type="RigidBody3D" unique_id=178991697]
+script = ExtResource("1_lwbkn")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1920798551]
+transform = Transform3D(0.255, 0, 0, 0, 0.255, 0, 0, 0, 0.255, 0, 0, 0)
+billboard = 2
+texture = ExtResource("1_oy2ff")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1973537541]
+shape = SubResource("BoxShape3D_lwbkn")
+
+[node name="Timer" type="Timer" parent="." unique_id=88044767]
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1407300796]
+libraries/ = SubResource("AnimationLibrary_qr86e")
+
+[node name="blast_zone" type="Area3D" parent="." unique_id=672112664]
+
+[node name="blast_col" type="CollisionShape3D" parent="blast_zone" unique_id=480288601]
+shape = SubResource("SphereShape3D_lwbkn")
+disabled = true
+debug_color = Color(11.708403, 8.750384, 0, 0.9098039)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="blast_zone" to="." method="_on_blast_zone_body_entered"]

@@ -4,7 +4,7 @@ extends Node
 var player_pos = Vector3(0,0,0)
 var i = 0
 var trigger_boss = false
-
+var points = 0
 var sens = .04
 var shotgun = false
 var pie = false

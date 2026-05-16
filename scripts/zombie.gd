@@ -15,7 +15,7 @@ var dead = false
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var zombie_anim: AnimationPlayer = $"zombie rigged/AnimationPlayer"
 @onready var vision_ray: RayCast3D = $"detection ray"
-
+var waifu = false
 var player: Node3D
 var player_in_sight := false
 
@@ -37,8 +37,9 @@ func _physics_process(delta: float) -> void:
 		velocity.y -= gravity * delta
 
 	# Update target if player visible
-	if player_in_sight:
-		nav_agent.target_position = Global.player_pos
+	if waifu == false:
+		if player_in_sight:
+			nav_agent.target_position = Global.player_pos
 		
 	# Vision check
 	if player:
@@ -88,6 +89,7 @@ func attack() -> void:
 
 func take_damage(amount: int) -> void:
 	health -= amount
+	Global.points += hit_points
 	if health <= 0:
 		die()
 
@@ -107,12 +109,13 @@ func _on_attack_box_body_exited(_body: Node3D) -> void:
 
 
 func die() -> void:
+	Global.points += die_points
 	dead = true
 	self.process_mode = Node.PROCESS_MODE_DISABLED
 	animation_player.play("die")
 	await animation_player.animation_finished
 	queue_free()
-
+	
 
 func _on_detection_zone_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
@@ -121,11 +124,13 @@ func _on_detection_zone_body_entered(body: Node3D) -> void:
 		player_in_sight = true
 
 func look_at_player() -> void:
-	var target := player.global_position
-	target.y = global_position.y
-	look_at(target, Vector3.UP)
+	var move_dir = velocity.normalized()
 
-
+	if move_dir.length() > 0.1:
+		var target = global_position + move_dir
+		target.y = global_position.y
+		look_at(target, Vector3.UP)
+		
 func check_line_of_sight() -> void:
 	var origin := global_position + Vector3.UP * 1.5
 	var target := player.global_position + Vector3.UP * 1.5
@@ -133,7 +138,14 @@ func check_line_of_sight() -> void:
 	vision_ray.global_position = origin
 	vision_ray.target_position = vision_ray.to_local(target)
 	vision_ray.force_raycast_update()
-#
+	
+func waifu_bomb(bomb):
+	waifu = true
+	nav_agent.target_position = bomb.global_position
+	#print("waifu bomb")
+	
+func waifu_gone():
+	waifu = false
 	#if vision_ray.is_colliding() and vision_ray.get_collider() == player:
 		#
 		#

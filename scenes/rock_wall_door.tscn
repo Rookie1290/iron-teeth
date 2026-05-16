@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://pd0sl1dwr2co"]
+
+[ext_resource type="PackedScene" uid="uid://d0wrsfhvld3cf" path="res://zombie 3d assets/rock wall.glb" id="1_fxf4m"]
+[ext_resource type="Script" uid="uid://bqvh84yac45st" path="res://scenes/rock_wall_door.gd" id="2_mc1w4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mc1w4"]
+size = Vector3(2.333435, 3.8701172, 41.293335)
+
+[node name="rock wall" unique_id=1129956850 groups=["interact"] instance=ExtResource("1_fxf4m")]
+script = ExtResource("2_mc1w4")
+
+[node name="Area3D" type="Area3D" parent="." index="1" unique_id=756033372]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=1368746441 groups=["interact"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10952759, 1.4350586, -0.11602783)
+shape = SubResource("BoxShape3D_mc1w4")
