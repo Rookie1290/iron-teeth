@@ -6,13 +6,13 @@ var child_count : int
 var spawners = []
 var disabled = true
 var cur_zombie = 0
-var max_zombie = 24
+var max_zombie = 20
 var cur_round_zombie = 0
 var max_round_zombie = 5
 var rng = RandomNumberGenerator.new()
-var speed = 3.0
+var speed = 2.0
 var health = 100
-var spawn_time = 2.0
+var spawn_time = 4.0
 var round_dead_zombie = 0
 var player = Node3D
 const ZOMBIE = preload("res://scenes/zombie.tscn")
@@ -94,10 +94,10 @@ func _process(delta: float) -> void:
 					var ins = ZOMBIE.instantiate()
 					#if spawners[random_num].enabled == true:
 					#print(random_num)
-					#ins.speed = speed
+					ins.speed = speed
 					ins.player = player
 					ins.global_position = spawners[random_num].global_position
-					#ins.health = health
+					ins.health = health
 					get_tree().get_root().add_child(ins)
 					cur_zombie += 1
 					cur_round_zombie += 1 
@@ -118,13 +118,15 @@ func disabled_toggle():
 func next_round():
 	print("next_round")
 	print(cur_round_zombie)
-	if round < 10:
+	if round < 5:
 		health += 10
-		max_round_zombie += 5
+		speed += .75
+		max_round_zombie += 3
+		spawn_time -= 25
 		print(health)
 	else:
-		speed = 90
-		spawn_time = .5
+		speed = 5.5
+		spawn_time = 1
 		health *= 1.1
 		max_round_zombie *= 1.15
 	round += 1

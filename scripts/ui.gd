@@ -21,6 +21,8 @@ extends CanvasLayer
 var temp_val = 0.0
 
 func _process(delta: float) -> void:
+	if Global.figurine:
+		waifu_bar.visible = true
 	if waifu_bar.value < waifu_bar.max_value:
 		temp_val += .1
 		waifu_bar.value = temp_val

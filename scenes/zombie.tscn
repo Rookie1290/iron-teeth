@@ -125,8 +125,8 @@ _data = {
 &"die": SubResource("Animation_4gx57")
 }
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_4gx57"]
-radius = 1.1525
+[sub_resource type="BoxShape3D" id="BoxShape3D_4gx57"]
+size = Vector3(0.77978516, 1, 0.828125)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xepks"]
 radius = 37.60697
@@ -153,8 +153,8 @@ libraries/ = SubResource("AnimationLibrary_xepks")
 [node name="hit_box" type="Area3D" parent="." unique_id=1061567620]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hit_box" unique_id=1191435987]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54814, -0.651731)
-shape = SubResource("SphereShape3D_4gx57")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014892578, 1.8813758, -0.5657935)
+shape = SubResource("BoxShape3D_4gx57")
 disabled = true
 
 [node name="detection zone" type="Area3D" parent="." unique_id=513073743]

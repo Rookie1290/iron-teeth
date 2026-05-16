@@ -112,6 +112,7 @@ texture_under = ExtResource("1_75u2n")
 texture_progress = ExtResource("3_xpksx")
 
 [node name="waifu bar" type="TextureProgressBar" parent="ui" unique_id=1781350164]
+visible = false
 layout_mode = 0
 offset_left = 27.0
 offset_top = 542.0

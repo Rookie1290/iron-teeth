@@ -37,6 +37,7 @@ func _physics_process(delta: float) -> void:
 		if linear_velocity.length() < 0.1:
 			add_to_group("waifu_bombs")
 			moving = false
+			$AudioStreamPlayer3D.play()
 			timer.start()
 
 

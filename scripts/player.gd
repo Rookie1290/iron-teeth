@@ -1,9 +1,9 @@
 # player.gd
 extends CharacterBody3D
 
-var walk_speed = 4
-const sprint_speed = 6
-var speed = 4.0
+var walk_speed = 5
+const sprint_speed = 7
+var speed = 5.0
 const JUMP_VELOCITY = 4.5
 
 var mouse_sens = .2
@@ -25,11 +25,13 @@ var stam_regen_timer := 0.0
 @export var regen_delay := 3.0
 
 var regen_timer := 0.0
+var melee_damage = 50
 
 const WAIFU_BOMB = preload("uid://c0nupokqbyans")
 
 @onready var camera: Camera3D = $head/Camera3D
 @onready var interact_ray: RayCast3D = $"head/interact ray"
+@onready var anim: AnimationPlayer = $head/AnimationPlayer
 
 @onready var ui = get_tree().get_first_node_in_group("ui")
 
@@ -54,6 +56,9 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("secondary_item"):
 		throw_waifu()
+	if Input.is_action_just_pressed("melee"):
+		if Global.gameboy:
+			anim.play("melee")
 
 	if Input.is_action_just_pressed("jump"):
 		velocity.y = JUMP_VELOCITY
@@ -160,16 +165,17 @@ func die():
 	#main.respawn()
 
 func throw_waifu():
-	if ui.waifu_bar.value == 100:
-		var ins = WAIFU_BOMB.instantiate()
-		ui.update_waifu()
-		get_tree().current_scene.add_child(ins)
+	if Global.figurine:
+		if ui.waifu_bar.value == 100:
+			var ins = WAIFU_BOMB.instantiate()
+			ui.update_waifu()
+			get_tree().current_scene.add_child(ins)
 
-		ins.global_transform.origin = camera.global_transform.origin
+			ins.global_transform.origin = camera.global_transform.origin
 
-		var dir = camera.global_transform.basis.z
+			var dir = camera.global_transform.basis.z
 
-		ins.throw(dir)
+			ins.throw(dir)
 
 func get_shotgun():
 	$head/Camera3D/shotgun.visible = true
@@ -198,3 +204,8 @@ func win():
 	visible = false
 	camera.current = false
 	ui.show_ending()
+
+
+func _on_melee_zone_body_entered(body: Node3D) -> void:
+	if body.has_method("take_damage"):
+		body.take_damage(melee_damage)

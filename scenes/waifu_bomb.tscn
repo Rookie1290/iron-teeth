@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b7aedcgi2nm5l" path="res://scripts/waifu_bomb.gd" id="1_lwbkn"]
 [ext_resource type="Texture2D" uid="uid://ddgua3g0qrrpy" path="res://zombie 2d assets/waifu_figure-removebg-preview.png" id="1_oy2ff"]
+[ext_resource type="AudioStream" uid="uid://cl5kudf7hp5v6" path="res://sounds/oceanframemusic-song-child-478994.mp3" id="3_xje7u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lwbkn"]
 
@@ -68,6 +69,9 @@ libraries/ = SubResource("AnimationLibrary_qr86e")
 shape = SubResource("SphereShape3D_lwbkn")
 disabled = true
 debug_color = Color(11.708403, 8.750384, 0, 0.9098039)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=393209539]
+stream = ExtResource("3_xje7u")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="blast_zone" to="." method="_on_blast_zone_body_entered"]

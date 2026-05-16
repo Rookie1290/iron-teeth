@@ -80,9 +80,10 @@ func _on_velocity_computed(safe_velocity: Vector3) -> void:
 
 
 func attack() -> void:
-	if !dead:
-		animation_player.play("attack")
-		$bite.play()
+	if waifu == false:
+		if !dead:
+			animation_player.play("attack")
+			$bite.play()
 
 
 func take_damage(amount: int) -> void:
@@ -144,8 +145,9 @@ func get_target():
 	var bombs = get_tree().get_nodes_in_group("waifu_bombs")
 	
 	if bombs.size() > 0:
+		waifu = true
 		return bombs[0]
-		
+	waifu = false
 	return player
 	
 	
