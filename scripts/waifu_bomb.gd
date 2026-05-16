@@ -43,4 +43,4 @@ func _physics_process(delta: float) -> void:
 func _on_blast_zone_body_entered(body: Node3D) -> void:
 	if body.is_in_group("zombie"):
 		body.take_damage(damage)
-	print("waifu bomb")
+	#print("waifu bomb")

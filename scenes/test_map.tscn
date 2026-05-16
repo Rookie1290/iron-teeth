@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cgotwmnomdilk"]
 
 [ext_resource type="Script" uid="uid://femow08t7ym0" path="res://scripts/test_map.gd" id="1_8q2vg"]
+[ext_resource type="PackedScene" uid="uid://d2rdoeduhgw22" path="res://scenes/UI.tscn" id="2_m8t5h"]
 [ext_resource type="PackedScene" uid="uid://c05gydwucfgk" path="res://scenes/round_manager.tscn" id="3_5wrcu"]
 [ext_resource type="PackedScene" uid="uid://ckgfduhwwcsr2" path="res://scenes/npc.tscn" id="3_57l66"]
 [ext_resource type="PackedScene" uid="uid://bmmfvjv8tclpk" path="res://scenes/anim_bot.tscn" id="4_0ckd3"]
@@ -256,6 +257,8 @@ size = Vector3(2.536377, 2.5216064, 1.7563477)
 
 [node name="test map" type="Node3D" unique_id=1610732219 groups=["main"]]
 script = ExtResource("1_8q2vg")
+
+[node name="CanvasLayer" parent="." unique_id=787201898 instance=ExtResource("2_m8t5h")]
 
 [node name="main menu" parent="." unique_id=1137305308 groups=["main"] instance=ExtResource("44_fveia")]
 

@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://d2rdoeduhgw22"]
+
+[ext_resource type="Script" uid="uid://cvtsm318oqmtb" path="res://scripts/ui.gd" id="1_3wlde"]
+[ext_resource type="Texture2D" uid="uid://cndcclaous4je" path="res://zombie 2d assets/green bg.png" id="1_75u2n"]
+[ext_resource type="FontFile" uid="uid://rfbg043ihd8x" path="res://zombie 2d assets/prussian-brew-solid/PRBRS___.ttf" id="2_3wlde"]
+[ext_resource type="Texture2D" uid="uid://dodeflkeerwtj" path="res://zombie 2d assets/green.png" id="3_xpksx"]
+[ext_resource type="Texture2D" uid="uid://xmt35dottx37" path="res://zombie 2d assets/waifu_figure-dark.png" id="4_24e4x"]
+[ext_resource type="Texture2D" uid="uid://ddgua3g0qrrpy" path="res://zombie 2d assets/waifu_figure-removebg-preview.png" id="5_ukj8e"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=787201898 groups=["ui"]]
+script = ExtResource("1_3wlde")
+
+[node name="ui" type="Control" parent="." unique_id=832723194]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 649.0
+mouse_filter = 2
+
+[node name="dialogue rect" type="NinePatchRect" parent="ui" unique_id=2024901630]
+visible = false
+layout_mode = 0
+offset_left = 871.0
+offset_top = 50.0
+offset_right = 1111.0
+offset_bottom = 204.0
+texture = ExtResource("1_75u2n")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="npc id" type="Label" parent="ui/dialogue rect" unique_id=1119474869]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 49.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("2_3wlde")
+theme_override_font_sizes/font_size = 20
+
+[node name="dialogue" type="Label" parent="ui/dialogue rect" unique_id=961226249]
+layout_mode = 1
+offset_left = 19.0
+offset_top = 32.0
+offset_right = 224.0
+offset_bottom = 140.0
+theme_override_fonts/font = ExtResource("2_3wlde")
+theme_override_font_sizes/font_size = 20
+text = "bing bong ding dong"
+
+[node name="fps" type="Label" parent="ui" unique_id=2018914738]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="inv display" type="NinePatchRect" parent="ui" unique_id=2101983166]
+visible = false
+layout_mode = 0
+offset_left = 51.0
+offset_top = 42.0
+offset_right = 405.0
+offset_bottom = 138.0
+texture = ExtResource("1_75u2n")
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ui/inv display" unique_id=1927585824]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.5
+offset_top = -30.0
+offset_right = 69.5
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="item info" type="Label" parent="ui/inv display/HBoxContainer" unique_id=1043824330]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3wlde")
+theme_override_font_sizes/font_size = 20
+text = "jugkjkjhkj"
+
+[node name="item rect" type="TextureRect" parent="ui/inv display/HBoxContainer" unique_id=1190520562]
+custom_minimum_size = Vector2(60, 60.415)
+layout_mode = 2
+texture = ExtResource("1_75u2n")
+expand_mode = 3
+
+[node name="stamina_bar" type="TextureProgressBar" parent="ui" unique_id=762105869]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = -53.0
+offset_right = 174.0
+offset_bottom = -29.0
+grow_vertical = 0
+nine_patch_stretch = true
+stretch_margin_left = 1
+stretch_margin_top = 1
+stretch_margin_right = 1
+stretch_margin_bottom = 1
+texture_under = ExtResource("1_75u2n")
+texture_progress = ExtResource("3_xpksx")
+
+[node name="waifu bar" type="TextureProgressBar" parent="ui" unique_id=1781350164]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 542.0
+offset_right = 67.0
+offset_bottom = 582.0
+value = 100.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_under = ExtResource("4_24e4x")
+texture_progress = ExtResource("5_ukj8e")
+
+[node name="damage overlay" type="ColorRect" parent="." unique_id=512339180]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0, 0, 0)
+
+[node name="the end" type="Label" parent="." unique_id=1216021089]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -210.0
+offset_right = 34.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3wlde")
+theme_override_font_sizes/font_size = 68
+text = "THE END
+"
+
+[node name="crosshair" type="Label" parent="." unique_id=278904918]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -13.0
+offset_right = 22.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_3wlde")
+theme_override_font_sizes/font_size = 20
+text = "."
+
+[node name="dialogue timer" type="Timer" parent="." unique_id=890424933]
+one_shot = true
+
+[node name="waifu timer" type="Timer" parent="." unique_id=1040461570]
+
+[connection signal="timeout" from="dialogue timer" to="." method="_on_dialogue_timer_timeout"]
