@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bjvdv3kd6avwr" path="res://scripts/main_menu.gd" id="1_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://cndcclaous4je" path="res://zombie 2d assets/green bg.png" id="1_l6cm7"]
-[ext_resource type="FontFile" uid="uid://rfbg043ihd8x" path="res://prussian-brew-solid/PRBRS___.ttf" id="3_wu84c"]
-[ext_resource type="AudioStream" uid="uid://ccdt60mukupym" path="res://eighty-percent/thud.mp3" id="4_wu84c"]
+[ext_resource type="FontFile" uid="uid://rfbg043ihd8x" path="res://zombie 2d assets/prussian-brew-solid/PRBRS___.ttf" id="3_wu84c"]
+[ext_resource type="AudioStream" uid="uid://ccdt60mukupym" path="res://sounds/thud.mp3" id="4_wu84c"]
 
 [node name="main menu" type="Control" unique_id=1137305308]
 process_mode = 3

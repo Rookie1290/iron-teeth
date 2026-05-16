@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dwfernndaw8xr"
-path="res://.godot/imported/eight___.ttf-424747b2cd35a7085b32f1e240fe72eb.fontdata"
+uid="uid://ckbcub5cq1keq"
+path="res://.godot/imported/eighto__.ttf-66af22dfbea24bb8eed1823a7bbf9c94.fontdata"
 
 [deps]
 
-source_file="res://eighty-percent/eight___.ttf"
-dest_files=["res://.godot/imported/eight___.ttf-424747b2cd35a7085b32f1e240fe72eb.fontdata"]
+source_file="res://sounds/eighto__.ttf"
+dest_files=["res://.godot/imported/eighto__.ttf-66af22dfbea24bb8eed1823a7bbf9c94.fontdata"]
 
 [params]
 

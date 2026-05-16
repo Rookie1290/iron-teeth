@@ -6,7 +6,7 @@ var die_points = 100
 var hit_points = 10
 
 @export var dummy := false
-@export var speed: float = 5.0
+@export var speed: float = 3.0
 @export var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @export var vision_range := 40.0
 var dead = false
@@ -17,12 +17,12 @@ var dead = false
 @onready var vision_ray: RayCast3D = $"detection ray"
 var waifu = false
 var player: Node3D
-var player_in_sight := false
+var player_in_sight := true
 
 
 func _ready() -> void:
 	zombie_anim.play("ArmatureAction")
-
+	
 	if dummy:
 		health = 100000
 		speed = 0.0
@@ -35,18 +35,16 @@ func _physics_process(delta: float) -> void:
 	# Gravity
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-
+	var target = get_target()
 	# Update target if player visible
-	if waifu == false:
-		if player_in_sight:
-			nav_agent.target_position = Global.player_pos
-		
+
 	# Vision check
-	if player:
-		var dist := global_position.distance_to(player.global_position)
+	if target:
+		nav_agent.target_position = target.global_position
+		var dist := global_position.distance_to(target.global_position)
 		if dist <= vision_range:
 			look_at_player()
-			check_line_of_sight()
+			#check_line_of_sight()
 		#else:
 			#player_in_sight = false
 
@@ -113,15 +111,17 @@ func die() -> void:
 	dead = true
 	self.process_mode = Node.PROCESS_MODE_DISABLED
 	animation_player.play("die")
+	get_tree().call_group("zombie_spawner", "zombie_died")
 	await animation_player.animation_finished
+	
 	queue_free()
 	
 
 func _on_detection_zone_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		$AudioStreamPlayer3D.play()
-		player = body
-		player_in_sight = true
+		#player = body
+		#player_in_sight = true
 
 func look_at_player() -> void:
 	var move_dir = velocity.normalized()
@@ -139,13 +139,21 @@ func check_line_of_sight() -> void:
 	vision_ray.target_position = vision_ray.to_local(target)
 	vision_ray.force_raycast_update()
 	
-func waifu_bomb(bomb):
-	waifu = true
-	nav_agent.target_position = bomb.global_position
-	#print("waifu bomb")
+	
+func get_target():
+	var bombs = get_tree().get_nodes_in_group("waifu_bombs")
+	
+	if bombs.size() > 0:
+		return bombs[0]
+		
+	return player
+	
+	
+func waifu_bomb():
+	get_target()
 	
 func waifu_gone():
-	waifu = false
+	get_target()
 	#if vision_ray.is_colliding() and vision_ray.get_collider() == player:
 		#
 		#

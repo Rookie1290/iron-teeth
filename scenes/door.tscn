@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dratbjosgqw7i" path="res://scripts/door.gd" id="1_uvdjg"]
 [ext_resource type="PackedScene" uid="uid://dx0nm80yjhuw2" path="res://zombie 3d assets/door.glb" id="2_uvdjg"]
-[ext_resource type="AudioStream" uid="uid://haoeusc8uqfd" path="res://eighty-percent/creaky-old-door-472357.mp3" id="3_83dcw"]
+[ext_resource type="AudioStream" uid="uid://haoeusc8uqfd" path="res://sounds/creaky-old-door-472357.mp3" id="3_83dcw"]
 
 [sub_resource type="Animation" id="Animation_18pbm"]
 length = 0.001

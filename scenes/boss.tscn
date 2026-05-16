@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cm4w6kaevfsv3" path="res://scripts/boss.gd" id="1_neq0i"]
 [ext_resource type="PackedScene" uid="uid://csbqkipkd1hm7" path="res://zombie 3d assets/cac-1769805598908.gltf" id="2_neq0i"]
-[ext_resource type="AudioStream" uid="uid://duivd5r7w3xyr" path="res://eighty-percent/scary-scream-401725.mp3" id="3_qnbj4"]
-[ext_resource type="AudioStream" uid="uid://t3wcijipi4e0" path="res://eighty-percent/grunt-85990.mp3" id="4_r3bxh"]
+[ext_resource type="AudioStream" uid="uid://duivd5r7w3xyr" path="res://sounds/scary-scream-401725.mp3" id="3_qnbj4"]
+[ext_resource type="AudioStream" uid="uid://t3wcijipi4e0" path="res://sounds/grunt-85990.mp3" id="4_r3bxh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dlmty"]
 radius = 0.3

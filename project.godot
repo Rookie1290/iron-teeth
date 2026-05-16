@@ -14,7 +14,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="simple zombie shooter"
+config/name="simple zombie shooter git"
 run/main_scene="uid://cgotwmnomdilk"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -30,8 +30,10 @@ window/stretch/mode="canvas_items"
 [file_customization]
 
 folder_colors={
+"res://addons/": "gray",
 "res://scenes/": "blue",
 "res://scripts/": "red",
+"res://sounds/": "orange",
 "res://zombie 2d assets/": "yellow",
 "res://zombie 3d assets/": "green"
 }
@@ -40,6 +42,7 @@ folder_colors={
 
 interact=""
 main=""
+waifu_bombs=""
 
 [input]
 

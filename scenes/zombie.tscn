@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ba4aqhjdc2kr6" path="res://scripts/zombie.gd" id="1_1vlb3"]
 [ext_resource type="PackedScene" uid="uid://b6drjkj13dkd8" path="res://zombie 3d assets/people/zombie rigged.glb" id="2_httt1"]
-[ext_resource type="AudioStream" uid="uid://xv0ucu6h8lkp" path="res://eighty-percent/woodpecker-352822.mp3" id="3_xepks"]
-[ext_resource type="AudioStream" uid="uid://dbtjxy6uv23hl" path="res://eighty-percent/woodpecker-sound-effect-384453.mp3" id="4_4gx57"]
+[ext_resource type="AudioStream" uid="uid://xv0ucu6h8lkp" path="res://sounds/woodpecker-352822.mp3" id="3_xepks"]
+[ext_resource type="AudioStream" uid="uid://dbtjxy6uv23hl" path="res://sounds/woodpecker-sound-effect-384453.mp3" id="4_4gx57"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ftooa"]
 radius = 0.422209

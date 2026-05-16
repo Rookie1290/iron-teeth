@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://c05gydwucfgk"]
+
+[sub_resource type="GDScript" id="GDScript_lbllt"]
+script/source = "extends Node3D
+
+var child_count
+var cur_round = 0
+var zombies_per_round : int = 12
+var round_in_progress : bool = false
+#var zombies_alive : int = 0
+
+func _ready() -> void:
+	#start_new_round()
+	
+	
+	pass
+	
+func _process(delta: float) -> void:
+	pass
+
+
+
+
+func start_new_round():
+	cur_round += 1
+	round_in_progress = true
+	Global.max_round_zombies = zombies_per_round
+	#print(\"new round\",cur_round,\"max zombies\", zombies_per_round)
+	get_tree().call_group(\"zombie_spawner\", \"start\")
+"
+
+[node name="round_manager" type="Node3D" unique_id=402175699]
+script = SubResource("GDScript_lbllt")

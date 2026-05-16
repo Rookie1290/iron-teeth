@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://rfbg043ihd8x"
-path="res://.godot/imported/PRBRS___.ttf-a988d4323132eec8083f3c91922af7f7.fontdata"
+path="res://.godot/imported/PRBRS___.ttf-b2de6cf060b3616effccdee2a0fece68.fontdata"
 
 [deps]
 
-source_file="res://prussian-brew-solid/PRBRS___.ttf"
-dest_files=["res://.godot/imported/PRBRS___.ttf-a988d4323132eec8083f3c91922af7f7.fontdata"]
+source_file="res://zombie 2d assets/prussian-brew-solid/PRBRS___.ttf"
+dest_files=["res://.godot/imported/PRBRS___.ttf-b2de6cf060b3616effccdee2a0fece68.fontdata"]
 
 [params]
 

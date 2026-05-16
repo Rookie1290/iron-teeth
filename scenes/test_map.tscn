@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cgotwmnomdilk"]
 
 [ext_resource type="Script" uid="uid://femow08t7ym0" path="res://scripts/test_map.gd" id="1_8q2vg"]
+[ext_resource type="PackedScene" uid="uid://c05gydwucfgk" path="res://scenes/round_manager.tscn" id="3_5wrcu"]
 [ext_resource type="PackedScene" uid="uid://ckgfduhwwcsr2" path="res://scenes/npc.tscn" id="3_57l66"]
 [ext_resource type="PackedScene" uid="uid://bmmfvjv8tclpk" path="res://scenes/anim_bot.tscn" id="4_0ckd3"]
 [ext_resource type="PackedScene" uid="uid://liijgukqtgi6" path="res://zombie 3d assets/corps rigged.glb" id="4_fveia"]
 [ext_resource type="PackedScene" uid="uid://dey3f6ouajxry" path="res://zombie 3d assets/small cabin.glb" id="4_kddbv"]
-[ext_resource type="PackedScene" uid="uid://cqshq3lpa4064" path="res://scenes/zombie.tscn" id="4_p21b5"]
 [ext_resource type="PackedScene" uid="uid://5or6fva7rne1" path="res://zombie 3d assets/pine tree.glb" id="6_ss0f2"]
 [ext_resource type="Texture2D" uid="uid://dffkqmvjapirg" path="res://zombie 2d assets/shotgun-removebg-preview.png" id="6_uhu2c"]
 [ext_resource type="Texture2D" uid="uid://ddgua3g0qrrpy" path="res://zombie 2d assets/waifu_figure-removebg-preview.png" id="7_eukwx"]
@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://w6l7nahn1551" path="res://zombie 3d assets/wooden bed.glb" id="18_pjm8e"]
 [ext_resource type="Script" uid="uid://daudhgp4g6nki" path="res://scripts/progress_area.gd" id="20_2w63r"]
 [ext_resource type="PackedScene" uid="uid://cxa1dr0jvp8xr" path="res://scenes/sounds.tscn" id="24_diphd"]
-[ext_resource type="AudioStream" uid="uid://bxfsqv46vrh83" path="res://eighty-percent/cute-cat-meow-472372.mp3" id="25_hmnbr"]
+[ext_resource type="AudioStream" uid="uid://bxfsqv46vrh83" path="res://sounds/cute-cat-meow-472372.mp3" id="25_hmnbr"]
 [ext_resource type="PackedScene" uid="uid://d0wrsfhvld3cf" path="res://zombie 3d assets/rock wall.glb" id="26_pmkf2"]
 [ext_resource type="PackedScene" uid="uid://4wim7eanwcd1" path="res://zombie 3d assets/waifu shelf.glb" id="28_vo55k"]
 [ext_resource type="PackedScene" uid="uid://ca23vrixgelba" path="res://zombie 3d assets/funko shelf.glb" id="29_q4233"]
@@ -35,21 +35,23 @@
 [ext_resource type="PackedScene" uid="uid://co05l1c6smuuj" path="res://zombie 3d assets/xbox.glb" id="33_2w63r"]
 [ext_resource type="PackedScene" uid="uid://cuntd4oakjwst" path="res://zombie 3d assets/stove.glb" id="33_ooflh"]
 [ext_resource type="PackedScene" uid="uid://dttca45sbv8pe" path="res://zombie 3d assets/cabinet.glb" id="34_2w63r"]
-[ext_resource type="AudioStream" uid="uid://dbgaaw38d7et2" path="res://eighty-percent/old-lady-scream-42709.mp3" id="36_cea3d"]
-[ext_resource type="AudioStream" uid="uid://duivd5r7w3xyr" path="res://eighty-percent/scary-scream-401725.mp3" id="38_1c623"]
+[ext_resource type="AudioStream" uid="uid://dbgaaw38d7et2" path="res://sounds/old-lady-scream-42709.mp3" id="36_cea3d"]
+[ext_resource type="AudioStream" uid="uid://duivd5r7w3xyr" path="res://sounds/scary-scream-401725.mp3" id="38_1c623"]
 [ext_resource type="Texture2D" uid="uid://m6jx4n432cu7" path="res://zombie 2d assets/pills-removebg-preview.png" id="38_4tk6c"]
 [ext_resource type="PackedScene" uid="uid://bxfd21nkasppk" path="res://zombie 3d assets/chair.glb" id="38_k54pq"]
 [ext_resource type="PackedScene" uid="uid://by5yx86grgnel" path="res://zombie 3d assets/apple pie.glb" id="40_cgrq0"]
 [ext_resource type="PackedScene" uid="uid://cwdkedofmwnvf" path="res://zombie 3d assets/gameboy.glb" id="41_rf3cb"]
 [ext_resource type="PackedScene" uid="uid://cuhpuneguiept" path="res://zombie 3d assets/man rigged.glb" id="42_8q2vg"]
 [ext_resource type="PackedScene" uid="uid://bp1gtvtyn2t0c" path="res://zombie 3d assets/medicine.glb" id="43_rf3cb"]
-[ext_resource type="FontFile" uid="uid://rfbg043ihd8x" path="res://prussian-brew-solid/PRBRS___.ttf" id="44_8q2vg"]
+[ext_resource type="FontFile" uid="uid://rfbg043ihd8x" path="res://zombie 2d assets/prussian-brew-solid/PRBRS___.ttf" id="44_8q2vg"]
 [ext_resource type="PackedScene" uid="uid://gjoiht7ptqmx" path="res://scenes/main_menu.tscn" id="44_fveia"]
-[ext_resource type="AudioStream" uid="uid://dcmw1f32gh8su" path="res://eighty-percent/picked-guitar-loop-18807.mp3" id="45_0ckd3"]
+[ext_resource type="AudioStream" uid="uid://dcmw1f32gh8su" path="res://sounds/picked-guitar-loop-18807.mp3" id="45_0ckd3"]
 [ext_resource type="PackedScene" uid="uid://dep5hwqmqlcse" path="res://zombie 3d assets/corps looking rigged.glb" id="45_6hptx"]
 [ext_resource type="PackedScene" uid="uid://j3xcklo8838s" path="res://zombie 3d assets/miku body pillow.glb" id="45_fveia"]
 [ext_resource type="PackedScene" uid="uid://cltg1mb5w47uy" path="res://zombie 3d assets/cat.glb" id="48_2icoj"]
 [ext_resource type="PackedScene" uid="uid://c1ahe004eu2ma" path="res://scenes/big_door_rock.tscn" id="50_e6t1a"]
+[ext_resource type="PackedScene" uid="uid://cg8t4hxhv2scq" path="res://scenes/zombie_spawner.tscn" id="51_5wrcu"]
+[ext_resource type="Script" uid="uid://bde76wqcog7mm" path="res://scripts/spawn_mark.gd" id="52_m8t5h"]
 
 [sub_resource type="Environment" id="Environment_ss0f2"]
 background_mode = 1
@@ -250,55 +252,12 @@ size = Vector3(1.4619141, 2.668396, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_8q2vg"]
 size = Vector3(2.536377, 2.5216064, 1.7563477)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_1clbg"]
+
 [node name="test map" type="Node3D" unique_id=1610732219 groups=["main"]]
 script = ExtResource("1_8q2vg")
 
 [node name="main menu" parent="." unique_id=1137305308 groups=["main"] instance=ExtResource("44_fveia")]
-
-[node name="zombie" parent="." unique_id=1443429416 instance=ExtResource("4_p21b5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.89289, 0.808604, 27.682709)
-
-[node name="zombie2" parent="." unique_id=1336664704 instance=ExtResource("4_p21b5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.11327, 0.808604, -9.267994)
-
-[node name="zombie3" parent="." unique_id=1837108589 instance=ExtResource("4_p21b5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.87236, 0.808604, -4.8488827)
-
-[node name="zombie7" parent="." unique_id=186312374 instance=ExtResource("4_p21b5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.860855, 0.808604, -54.352135)
-
-[node name="zombie8" parent="." unique_id=203234044 instance=ExtResource("4_p21b5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.61994, 0.808604, -54.352135)
-
-[node name="zombie4" parent="." unique_id=2576942 instance=ExtResource("4_p21b5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.05149, 0.8086002, -35.832428)
-
-[node name="zombie5" parent="." unique_id=904543988 instance=ExtResource("4_p21b5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.76909, 0.8086002, -40.26799)
-
-[node name="zombie6" parent="." unique_id=1801537074 instance=ExtResource("4_p21b5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75.032845, 0.8086002, -44.18996)
-
-[node name="zombie9" parent="." unique_id=2137750987 instance=ExtResource("4_p21b5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.07874, 0.8086002, 12.690239)
-
-[node name="zombie10" parent="." unique_id=621298782 instance=ExtResource("4_p21b5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.785229, 0.8086002, 5.833519)
-
-[node name="zombie12" parent="." unique_id=1078485071 instance=ExtResource("4_p21b5")]
-transform = Transform3D(0.8336835, 0, -0.5522426, 0, 1, 0, 0.5522426, 0, 0.8336835, 21.086315, 0.8086002, 30.706158)
-
-[node name="zombie13" parent="." unique_id=481074200 instance=ExtResource("4_p21b5")]
-transform = Transform3D(0.8336835, 0, -0.5522426, 0, 1, 0, 0.5522426, 0, 0.8336835, 23.450214, 0.8086002, 24.047428)
-
-[node name="zombie14" parent="." unique_id=1749530156 instance=ExtResource("4_p21b5")]
-transform = Transform3D(0.8336835, 0, -0.5522426, 0, 1, 0, 0.5522426, 0, 0.8336835, 29.574297, 0.8086002, 23.774588)
-
-[node name="zombie15" parent="." unique_id=217802843 instance=ExtResource("4_p21b5")]
-transform = Transform3D(0.8336835, 0, -0.5522426, 0, 1, 0, 0.5522426, 0, 0.8336835, 28.241945, 0.8086002, 18.168932)
-
-[node name="zombie11" parent="." unique_id=428311133 instance=ExtResource("4_p21b5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.048985, 0.8086002, 1.9115486)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1926985559]
 environment = SubResource("Environment_ss0f2")
@@ -309,6 +268,8 @@ light_color = Color(0.75836056, 0.5631987, 0.20912316, 1)
 light_energy = 0.525
 light_bake_mode = 1
 sky_mode = 1
+
+[node name="round_manager" parent="." unique_id=1531708001 instance=ExtResource("3_5wrcu")]
 
 [node name="anim bot" parent="." unique_id=1751289386 instance=ExtResource("4_0ckd3")]
 
@@ -380,10 +341,10 @@ volume_db = -18.181
 [node name="wooden bed" parent="." unique_id=2030060620 instance=ExtResource("18_pjm8e")]
 transform = Transform3D(0.62590533, 0, -0.071711294, 0, 0.63, 0, 0.071711294, 0, 0.62590533, -84.21815, -0.059436798, 71.69667)
 
-[node name="Cube_001" parent="wooden bed" index="2" unique_id=1090202475]
+[node name="Cube_001" parent="wooden bed" index="2" unique_id=789247679]
 transform = Transform3D(0.27602202, 0.059992522, 0.0060327686, -0.13079886, 0.12642372, 0.026801731, 0.0033731647, -0.006873471, 0.5456189, -2.384636, 1.9076221, -0.042160034)
 
-[node name="Cube_002" parent="wooden bed" index="3" unique_id=466843584]
+[node name="Cube_002" parent="wooden bed" index="3" unique_id=579398932]
 transform = Transform3D(0.30546337, 0, 0, 0, 0.14010459, 0, 0, 0, 0.54630995, -2.2726517, 1.6742297, 0.017852783)
 
 [node name="wooden bed3" parent="." unique_id=431965134 instance=ExtResource("18_pjm8e")]
@@ -1152,13 +1113,32 @@ visible = false
 transform = Transform3D(0.16781741, 0, -0.17157306, 0, 0.24, 0, 0.17157306, 0, 0.16781741, -35.77629, 1.3533838, 38.121845)
 
 [node name="big_door_rock" parent="." unique_id=280265931 instance=ExtResource("50_e6t1a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.407524, 1.8955675, 59.66605)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.407524, -5.402965, 59.66605)
 point_threshold = 50
+
+[node name="zombie_spawner" parent="." unique_id=897115168 instance=ExtResource("51_5wrcu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.82086, -0.034578297, 25.165209)
+
+[node name="spawn_mark" parent="zombie_spawner" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3616205, -6.2535343)
+
+[node name="spawn_mark2" type="Marker3D" parent="zombie_spawner" unique_id=90802225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3616205, 5.0594406)
+script = ExtResource("52_m8t5h")
+
+[node name="in_range" type="Area3D" parent="zombie_spawner/spawn_mark2" unique_id=1508172161]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="zombie_spawner/spawn_mark2/in_range" unique_id=1595626674]
+shape = SubResource("SphereShape3D_1clbg")
 
 [connection signal="body_entered" from="progress area" to="." method="_on_progress_area_body_entered"]
 [connection signal="body_entered" from="progress area2" to="." method="_on_progress_area_2_body_entered"]
 [connection signal="body_entered" from="granny jumpscare" to="." method="_on_granny_jumpscare_body_entered"]
 [connection signal="body_entered" from="final area" to="." method="_on_final_area_body_entered"]
+[connection signal="area_entered" from="zombie_spawner/spawn_mark2/in_range" to="zombie_spawner/spawn_mark2" method="_on_in_range_area_entered"]
+[connection signal="area_exited" from="zombie_spawner/spawn_mark2/in_range" to="zombie_spawner/spawn_mark2" method="_on_in_range_area_exited"]
 
 [editable path="anim bot/corps rigged"]
 [editable path="anim bot2/nic rigged"]
@@ -1168,3 +1148,4 @@ point_threshold = 50
 [editable path="wooden bed"]
 [editable path="anim bot6/man rigged"]
 [editable path="anim bot7/corps looking rigged"]
+[editable path="zombie_spawner"]

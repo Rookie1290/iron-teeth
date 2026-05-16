@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://jt21w4h0swqr" path="res://zombie 3d assets/cigaret.glb" id="4_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://dodeflkeerwtj" path="res://zombie 2d assets/green.png" id="6_smehm"]
 [ext_resource type="Texture2D" uid="uid://cndcclaous4je" path="res://zombie 2d assets/green bg.png" id="6_tuyoq"]
-[ext_resource type="FontFile" uid="uid://rfbg043ihd8x" path="res://prussian-brew-solid/PRBRS___.ttf" id="6_ur7pv"]
-[ext_resource type="AudioStream" uid="uid://byqrxt750pnmq" path="res://eighty-percent/night-ambience-17064.mp3" id="7_fjrip"]
+[ext_resource type="FontFile" uid="uid://rfbg043ihd8x" path="res://zombie 2d assets/prussian-brew-solid/PRBRS___.ttf" id="6_ur7pv"]
+[ext_resource type="AudioStream" uid="uid://byqrxt750pnmq" path="res://sounds/night-ambience-17064.mp3" id="7_fjrip"]
+[ext_resource type="Texture2D" uid="uid://ddgua3g0qrrpy" path="res://zombie 2d assets/waifu_figure-removebg-preview.png" id="8_ur7pv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8vuu"]
 height = 2.524414
@@ -33,6 +34,9 @@ albedo_color = Color(0.80049086, 0.80049074, 0.80049074, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_ur7pv"]
 material = SubResource("StandardMaterial3D_smehm")
 size = Vector3(0.05, 0.05, 0.05)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_smehm"]
+radius = 71.56221
 
 [node name="player" type="CharacterBody3D" unique_id=523030131 groups=["player"]]
 script = ExtResource("1_3vyb7")
@@ -178,7 +182,17 @@ stretch_margin_bottom = 1
 texture_under = ExtResource("6_tuyoq")
 texture_progress = ExtResource("6_smehm")
 
+[node name="waifu bar" type="TextureProgressBar" parent="CanvasLayer/ui" unique_id=1399422164]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 542.0
+offset_right = 67.0
+offset_bottom = 582.0
+nine_patch_stretch = true
+texture_under = ExtResource("8_ur7pv")
+
 [node name="damage overlay" type="ColorRect" parent="CanvasLayer" unique_id=597529408]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -231,5 +245,12 @@ stream = ExtResource("7_fjrip")
 volume_db = -11.708
 unit_size = 16.09
 autoplay = true
+
+[node name="zombie area" type="Area3D" parent="." unique_id=898102640]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="zombie area" unique_id=522577962]
+shape = SubResource("SphereShape3D_smehm")
 
 [connection signal="timeout" from="dialogue timer" to="." method="_on_dialogue_timer_timeout"]

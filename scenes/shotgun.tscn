@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://kp7rj6s35kgo" path="res://scripts/shotgun.gd" id="1_voyse"]
 [ext_resource type="PackedScene" uid="uid://bn0wboxkp0m50" path="res://zombie 3d assets/shotgun.glb" id="2_gnj2g"]
-[ext_resource type="AudioStream" uid="uid://dvc0th1loneg2" path="res://eighty-percent/shotgun-146188.mp3" id="3_w47vr"]
-[ext_resource type="AudioStream" uid="uid://deh33pux2mtno" path="res://eighty-percent/gun-reload-2-395177.mp3" id="4_w47vr"]
+[ext_resource type="AudioStream" uid="uid://dvc0th1loneg2" path="res://sounds/shotgun-146188.mp3" id="3_w47vr"]
+[ext_resource type="AudioStream" uid="uid://deh33pux2mtno" path="res://sounds/gun-reload-2-395177.mp3" id="4_w47vr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ya1i"]
 albedo_color = Color(0.18359044, 0.18359044, 0.18359044, 1)

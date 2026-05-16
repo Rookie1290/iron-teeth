@@ -43,11 +43,14 @@ var regen_timer := 0.0
 
 
 func _ready() -> void:
+	Global.player = self
+	print("player in")
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	mouse_sens = Global.sens
 	$head/Camera3D.current = true
 	if Global.shotgun:
 		get_shotgun()
+	
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -170,8 +173,8 @@ func throw_waifu():
 
 
 func die():
-	print("playerr dead")
-	queue_free()
+	print("player dead")
+	#queue_free()
 	var main = get_tree().get_first_node_in_group("main")
 	main.respawn()
 	#get_tree().quit()

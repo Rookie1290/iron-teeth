@@ -3,10 +3,11 @@ extends RigidBody3D
 
 @export var throw_force := 18.0
 @export var upward_force := 4.0
-@export var explosion_time := 10.0
-var damage = 150
+@export var explosion_time := 5.0
+var damage = 15
 var moving = true
 @onready var anim: AnimationPlayer = $AnimationPlayer
+const EXPLOSION = preload("uid://btmfgw1657u8y")
 
 func _ready():
 	timer.wait_time = explosion_time
@@ -22,6 +23,9 @@ func _on_timer_timeout():
 	
 	
 func explode():
+	var ins = EXPLOSION.instantiate()
+	$Sprite3D.visible = false
+	add_child(ins)
 	get_tree().call_group("zombie","waifu_gone")
 	anim.play("explosion")
 	await anim.animation_finished
@@ -31,7 +35,7 @@ func explode():
 func _physics_process(delta: float) -> void:
 	if moving == true:
 		if linear_velocity.length() < 0.1:
-			get_tree().call_group("zombie","waifu_bomb",self)
+			add_to_group("waifu_bombs")
 			moving = false
 			timer.start()
 

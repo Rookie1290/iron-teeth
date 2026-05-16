@@ -11,7 +11,11 @@ var pie = false
 var gameboy = false
 var figurine = false
 var boss_dead = false
-
+var max_round_zombies = 0
+var cur_zombies = 0
+var cur_round_zombies = 0
+var round = 0
+var player
 func update_progress():
 	i += 1
 	if i == 2:

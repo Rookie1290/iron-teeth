@@ -5,6 +5,9 @@ extends Control
 var player
 var game_started := false
 var sens
+@onready var round_manager: Node3D = $"../round_manager"
+
+@onready var zombie_spawner: Node3D = $"../zombie_spawner"
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -22,6 +25,9 @@ func _on_play_button_pressed() -> void:
 	if not game_started:
 		game_started = true
 		test_map.start_game()
+		
+		round_manager.start_new_round()
+		
 	else:
 		test_map.unpause()
 	player = get_tree().get_first_node_in_group("player")
